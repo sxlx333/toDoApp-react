@@ -1,0 +1,22 @@
+.mainHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.4rem #0003;
+}
+.logo {
+  height: 3rem;
+}
+
+@media (min-width: 48rem) {
+  .mainHeader {
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,73 @@
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+  }
+  .lightbox[data-visible='false'] {
+    display: none;
+  }
+  .background {
+    width: 100%;
+    height: 100%;
+    background-color: #0005;
+  }
+  
+  .formCreate {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0.4rem 0.8rem #0005;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .formRow {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2rem;
+    border: none;
+  }
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+  .input {
+    width: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+  }
+  .input[type='color'] {
+    padding: 0;
+    height: 2.3rem;
+    border: none;
+  }
+  input[type='color' i]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    line-height: 2.7rem;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0.4rem 0.8rem #0005;
+  }
