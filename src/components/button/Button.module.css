@@ -6,6 +6,12 @@
   line-height: 1em;
   border: none;
   border-radius: 0.3em;
+  border: 1px solid #36f;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #36f;
+  
 }
 .btn > .icon {
 }
