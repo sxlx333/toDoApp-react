@@ -11,6 +11,11 @@ export function Tasks() {
                     <TaskCard />
                     <TaskCard />
                     <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
                 </ul>
             </div>
             <div className={style.column}>
