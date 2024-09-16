@@ -1,8 +1,8 @@
 import style from './Footer.module.css';
 
-export function Footer() {
+export function Footer({ onClick }) {
     return (
-        <footer className={style.mainFooter}>
+        <footer onClick={onClick} className={style.mainFooter}>
             Cipyright &copy; ir 🐱
         </footer>
     );

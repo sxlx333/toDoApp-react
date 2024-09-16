@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import style from './TaskCard.module.css';
 
-export function TaskCard() {
+export function TaskCard({ id, showOptionsMenu, cardMenuVisibleById}) {
+
+    function handleOptionsMenuClick(event) {
+        event.stopPropagation();
+        showOptionsMenu(id);
+    }
+
     return (
         <li className={style.task}>
             <div className={style.header}>
-                <div className={style.more}>...</div>
-                <div className={style.moreActions} data-visible="false">
+                <div onClick={handleOptionsMenuClick} className={style.more}>...</div>
+                <div className={style.moreActions} data-visible={id === cardMenuVisibleById}>
                     <button className={style.button} type="button">Move up</button>
                     <button className={style.button} type="button">Move down</button>
                     <hr />
