@@ -1,14 +1,16 @@
-/* eslint-disable react/prop-types */
-import { Form } from '../form/Form';
+
+import { useContext } from 'react';
 import { Tasks } from '../tasks/Tasks';
 import style from './Main.module.css';
+import { GlobalContext } from '../../context/GlobalContext';
 
-export function Main({ onClick, showOptionsMenu, cardMenuVisibleById, lightboxVisible }) {
+export function Main() {
+    const { updateOptionsMenuStatus } = useContext(GlobalContext);
+
     return (
-        <main onClick={onClick} className={style.content}>
+        <main onClick={() => updateOptionsMenuStatus(-1)} className={style.content}>
             <h1 className={style.title}>Darbų planavimo platforma</h1>
-            <Form lightboxVisible={lightboxVisible}/>
-            <Tasks showOptionsMenu={showOptionsMenu} cardMenuVisibleById={cardMenuVisibleById} />
+            <Tasks />
             <div className={style.background}></div>
         </main>
     );

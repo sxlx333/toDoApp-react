@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import style from './Button.module.css';
 
-export function Button({text, icon, type, size, onClick}) {
+export function Button({ text, icon, type, size, onClick }) {
     const iconElement = !icon ? null : <span className={style.icon}>{icon}</span>;
 
     let classes = style.btn;

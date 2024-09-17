@@ -1,32 +1,22 @@
-import { useState } from "react";
-import { Footer } from "./components/footer/Footer";
-import { Header } from "./components/header/Header";
-import { Main } from "./components/main/Main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ContextWrapper } from "./context/GlobalContext";
+import { LightboxContextWrapper } from "./context/LightBoxContext";
+import { Home } from "./pages/Home";
+import { NotFound } from "./pages/NotFound";
+import { Login } from "./pages/Login";
 
-export default function App() {
-  const [cardMenuVisibleById, setCardMenuVisibleById] = useState(-1);
-  const [lightboxVisible, setLightboxVisible] = useState(false);
-  
-  function hideOptionsMenu() {
-    setCardMenuVisibleById(-1);
-  }
-
-  function showOptionsMenu(id) {
-    setCardMenuVisibleById(id === cardMenuVisibleById ? -1 : id);
-  }
-
-  function showLightbox() {
-    setLightboxVisible(true);
-  }
-
+export function App() {
   return (
-    <>
-      <Header onClick={hideOptionsMenu} showLightbox={showLightbox}/>
-      <Main onClick={hideOptionsMenu} 
-        showOptionsMenu={showOptionsMenu} 
-        cardMenuVisibleById={cardMenuVisibleById} 
-        lightboxVisible={lightboxVisible}/>
-      <Footer onClick={hideOptionsMenu}/>
-    </>
-  );
+    <ContextWrapper>
+      <LightboxContextWrapper>
+        <BrowserRouter>
+          <Routes>
+            <Route index path='/' element={<Home />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='*' element={<NotFound />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </LightboxContextWrapper>
+    </ContextWrapper>
+  )
 }
