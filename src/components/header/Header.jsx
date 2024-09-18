@@ -14,10 +14,10 @@ export function Header() {
     return (
         <header onClick={() => updateOptionsMenuStatus(-1)} className={style.mainHeader}>
             <img className={style.logo} src={logo} alt="Logo" />
-            <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/login'>Login</Link>
-                <Link to='/404'>404</Link>
+            <nav className={style.nav}>
+                <Link className={style.link} to='/'>Home</Link>
+                <Link className={style.link} to='/login'>Login</Link>
+                <Link className={style.link} to='/404'>404</Link>
             </nav>
             <Stats />
             <Button text="New task" icon="+" onClick={showLightbox} />
